@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virtual Paint Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <style>
+    body {
+       transition: background-color 0.5s;
+    }
+    body {
+      background-color: #242323 !important;
+       color: #e8e1e1 !important;
+    }
+    body.light-mode {
+       background-color: #faefef !important;
+       color: #080808 !important;
+    }
+    body {
+         margin: 50px; /* Adjust the value as needed */
+    }
+ </style>
+  <body >
+   </div>
+      <div class="text-center">
+      <h1 class="container mt-5" ><div class="spinner-grow text-success" role="status">
+        <span class="visually-hidden">Live...</span>
+      </div>Virtual Paint Model</h1>
+      </div>
+      <p> <h3> Model loaded successfully </h3>
+      <div class = "teat-center">
+        <div class="container mt-5">
+          <button id="darkModeToggle" class="btn btn-primary">Light Mode</button>
+       </div>
+       <br>
+       <br>
+        <p>
+          The Virtual Paint Model is an innovative Python script that transforms a live video feed into an interactive drawing canvas using computer vision and hand tracking. Built on the foundation of the OpenCV library and a custom `HandTrackingModule`, this model enables users to unleash their creativity through intuitive hand gestures. Upon initialization, the script captures video frames from the default camera, and the `HandTrackingModule` interprets these frames, identifying hand landmarks for real-time tracking.
+        </p>
+        <p>
+          The model introduces two distinct drawing modes – Selection mode and Drawing mode. Selection mode empowers users to choose colors and access an eraser by specific hand gestures, while Drawing mode allows users to draw directly on the virtual canvas with their index finger. Color selection is dynamic, responsive to the user's hand position in the selection area, offering options like red, blue, green, or the eraser.
+        </p>
+        <p>
+          The Virtual Paint Model creates a seamless user experience by manipulating the canvas in real-time. The display interface showcases the live video feed with split-screen functionality, displaying the original video on the left and the dynamic drawing canvas on the right. The model ensures ease of use. In essence, the Virtual Paint Model demonstrates the fusion of computer vision, hand tracking, and user-friendly design to bring forth an interactive and enjoyable drawing application.
+        </p>
+      </p>
+      <hr>
+      <p class="mb-0">Explore it </p>
+
+    <!-- Your content goes here -->
+    <div class="text-center">
+      <h1> <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Live...</span>
+      </div> ---Take a look at Model---</h1>
+      
+    </div>
+    <br>
+    <div class="text-center">
+      <img src="{{ url_for('video') }}" width="90%" alt="Live Stream"/>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="text-center">
+      <h1 >Description of the Model</h1>
+    </div>
+    <div class="accordion" id="accordionPanelsStayExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+            1. Overview:
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            The Virtual Paint Model is an innovative Python script that harnesses the capabilities of the OpenCV library and a custom HandTrackingModule to craft an interactive drawing application. This model breaks new ground by transforming a live video feed from the default camera into a dynamic canvas where users can create art through intuitive hand gestures.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            2. Initialization and Dependencies:
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            At the heart of the Virtual Paint Model lies the initiation phase, where crucial libraries are imported to enable specific functionalities. The OpenCV library serves as the backbone for computer vision tasks, while the custom HandTrackingModule provides specialized hand tracking capabilities. The script establishes a connection to the default camera, setting the stage for real-time video frame processing.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            3. Image Resources:
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Visual elements are fundamental to the user experience, and the script loads various images to enhance interaction. These include color options such as red, blue, and green, an eraser for corrections, a blank canvas to begin anew, a selection dot for precise control, and a display template for a polished interface. The choice and variety of images contribute to the overall aesthetic and functionality of the Virtual Paint Model.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              4. Drawing Modes:
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              The Virtual Paint Model introduces two distinctive drawing modes, each activated by specific hand gestures. Selection mode empowers users to navigate through color choices and access the eraser. Drawing mode, triggered by a different set of gestures, facilitates the act of drawing directly onto the canvas. These modes provide users with a versatile and immersive drawing experience, allowing for both precision and creative freedom.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                5. Color Selection:
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Dynamic color selection adds a layer of interactivity to the Virtual Paint Model. The user's hand position in the selection area determines the chosen color or activates the eraser. This feature not only simplifies the process of selecting tools but also engages users with an intuitive and responsive color-picking mechanism. The color palette includes vibrant options like red, blue, and green, ensuring a visually appealing drawing experience.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  6. Canvas Manipulation:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Canvas manipulation is a pivotal aspect of the Virtual Paint Model, involving real-time processing of the canvas to enhance the drawing experience. The script converts the canvas to grayscale and creates an inverted binary image. This binary image serves as a mask, allowing the canvas to seamlessly overlay on the original video feed. The result is an interactive canvas that responds dynamically to user gestures, creating a fluid and engaging drawing environment.
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    7. User Interface:
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    The user interface of the Virtual Paint Model is carefully crafted to provide a seamless and enjoyable experience. The display section showcases the video feed with the drawing capabilities. The split-screen layout allocates space for the original video on the left and the canvas on the right, offering users a clear view of their drawing process. This thoughtful interface design contributes to the overall usability and accessibility of the Virtual Paint Model.
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      8. Termination:
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      While the Virtual Paint Model immerses users in a creative process, it also ensures a straightforward way to conclude the experience. Users can terminate the application effortlessly by pressing the 'd' key, providing a clear and intuitive exit mechanism. This user-friendly feature adds to the overall positive user experience, ensuring that the model is both engaging and accessible.
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                        9. Conclusion:
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        In conclusion, the Virtual Paint Model is a testament to the fusion of computer vision, hand tracking, and interactive design. The script's comprehensive functionalities, from initialization to termination, work harmoniously to create an immersive and enjoyable drawing application. By leveraging advanced technologies, the Virtual Paint Model invites users to explore their creativity through intuitive gestures, making the process of digital drawing accessible and engaging.
+                      </div>
+                    </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('darkModeToggle').addEventListener('click', function() {
+         document.body.classList.toggle('light-mode');
+      });
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
