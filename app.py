@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-cap = cv.VideoCapture(1)
+cap = cv.VideoCapture(0)
 
 cap.set(3,480)
 cap.set(4,640)
@@ -44,6 +44,8 @@ def generate_frames():
 
     while True:
         isTrue , img = cap.read()
+
+        newimg = np.zeros((480,640, 3),np.uint8)
 
         imgdisplay = cv.imread('Resources/Display.png')
 
@@ -91,6 +93,7 @@ def generate_frames():
 
                 if x1>0 and x1<50 and y1>50 and y1<100:
                     imgX = imgblank
+                    imgCanvas = newimg
                     drawColor = (255,255,0)
                 
                 cv.rectangle(img,(x1,y1-25),(x2,y2+25),drawColor,cv.FILLED)
@@ -111,6 +114,8 @@ def generate_frames():
                         cv.line(imgCanvas, (xp,yp), (x1,y1), drawColor , 15)
 
                     xp,yp = x1,y1
+                elif drawColor == (255,255,0):
+                    imgCanvas = newimg
 
     
         imgGray = cv.cvtColor(imgCanvas, cv.COLOR_BGR2GRAY)
