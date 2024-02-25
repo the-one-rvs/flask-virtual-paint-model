@@ -3,3 +3,4 @@ opencv-contrib-python
 mediapipe
 Gunicorn
 python-socketio
+eventlet
