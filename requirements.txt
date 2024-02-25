@@ -2,3 +2,4 @@ Flask
 opencv-contrib-python
 mediapipe
 Gunicorn
+python-socketio
