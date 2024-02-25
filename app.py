@@ -2,13 +2,31 @@ from flask import Flask, render_template, Response, redirect, url_for
 import cv2 as cv
 import HandTrackingModule as htm
 import numpy as np
+import eventlet
+import socketio
 
 app = Flask(__name__)
+
+sio = socketio.Server()
 
 cap = cv.VideoCapture(0)
 
 cap.set(3,480)
 cap.set(4,640)
+
+@sio.on('connect')
+def connect(sid, environ):
+    print('Client connected:', sid)
+
+@sio.on('draw')
+def draw(sid, data):
+    # Handle drawing logic here, you can receive drawing data from the client
+    pass
+
+@sio.on('disconnect')
+def disconnect(sid):
+    print('Client disconnected:', sid)
+
 
 def generate_frames():
     detector = htm.handDetector(detectionCon=0.85)
@@ -154,5 +172,9 @@ def index():
 def video():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app = socketio.Middleware(sio, app)
+
+    eventlet.wsgi.server(eventlet.listen(('localhost', 5000)), app)
